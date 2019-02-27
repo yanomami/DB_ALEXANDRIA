@@ -122,10 +122,10 @@ create table address
 (
   id_add int identity,
   address_line_add nvarchar(255) not null,
-  postal_code_add nchar(5) not null,
+  postal_code_add nvarchar(10) not null,
   city_add nvarchar(255) not null,
   country_id int not null,
-  state_add int,
+  state_add nvarchar(45),
   constraint address_pk
     primary key nonclustered (id_add),
   constraint address_country_id_country_fk
