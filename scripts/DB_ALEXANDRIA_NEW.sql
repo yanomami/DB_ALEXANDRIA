@@ -177,14 +177,13 @@ go
 create table client
 (
   id_client int identity,
-  email nvarchar(255) not null,
-  sti_id___________________ int not null,
   name nvarchar(255) not null,
   surname nvarchar(255),
+  email nvarchar(255) not null,
   phone nvarchar(255),
+  password nvarchar(255) not null,
   invoice_address_id int not null,
   delivery_address_id int not null,
-  password nvarchar(255) not null,
   payment_method_id int not null,
   constraint client_pk
     primary key nonclustered (id_client),
