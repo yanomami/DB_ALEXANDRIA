@@ -112,7 +112,7 @@ create table category
 		constraint category_pk
 			primary key nonclustered,
 	description nvarchar(255) not null,
-	parent int default 1 not null
+	parent int default 1
 		constraint category_category_id_category_fk
 			references category
 )
