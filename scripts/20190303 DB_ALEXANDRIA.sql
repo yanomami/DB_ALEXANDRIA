@@ -203,7 +203,7 @@ create table client
 			primary key nonclustered,
 	title_id int not null
 		constraint client_title_id_title_fk
-		references title
+		references title,
 	first_name nvarchar(255) not null,
 	last_name nvarchar(255),
 	email nvarchar(255) not null,
@@ -217,8 +217,7 @@ create table client
 			references address,
 	payment_method_id int not null
 		constraint client_payment_method_id_payment_method_fk
-			references payment_method,
-
+			references payment_method
 )
 go
 
