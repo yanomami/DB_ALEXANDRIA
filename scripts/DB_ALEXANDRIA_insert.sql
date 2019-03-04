@@ -265,7 +265,7 @@ GO
 --
 SET IDENTITY_INSERT dbo.category ON
 GO
-INSERT dbo.category(id_category, description, parent) VALUES (1, N'Outdoors', 1)
+INSERT dbo.category(id_category, description, parent) VALUES (1, N'Outdoors', null)
 INSERT dbo.category(id_category, description, parent) VALUES (2, N'Beauty', 1)
 INSERT dbo.category(id_category, description, parent) VALUES (3, N'Sports', 1)
 INSERT dbo.category(id_category, description, parent) VALUES (4, N'Computers', 1)
