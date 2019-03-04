@@ -892,9 +892,9 @@ GO
 --
 SET IDENTITY_INSERT dbo.title ON
 GO
-INSERT dbo.title(id_title, [desc]) VALUES (1, N'(Undifined)')
-INSERT dbo.title(id_title, [desc]) VALUES (2, N'Madame')
-INSERT dbo.title(id_title, [desc]) VALUES (3, N'Sir')
+INSERT dbo.title(id_title, description) VALUES (1, N'(Undifined)')
+INSERT dbo.title(id_title, description) VALUES (2, N'Madame')
+INSERT dbo.title(id_title, description) VALUES (3, N'Sir')
 GO
 SET IDENTITY_INSERT dbo.title OFF
 GO

@@ -15,7 +15,7 @@ create table title
 	id_title int identity
 		constraint title_pk
 			primary key nonclustered,
-	[desc] nvarchar(255) not null
+	description nvarchar(255) not null
 )
 go
 
