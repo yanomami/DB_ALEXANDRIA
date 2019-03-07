@@ -28,15 +28,6 @@ create table collection
 )
 go
 
-create table order_line_status
-(
-	id_order_line_status int identity
-		constraint order_line_status_pk
-			primary key nonclustered,
-	description nvarchar(255) not null
-)
-go
-
 create table product
 (
 	id_product int identity
@@ -55,15 +46,6 @@ create table publisher
 		constraint publisher_pk
 			primary key nonclustered,
 	name nvarchar(255) not null
-)
-go
-
-create table order_status
-(
-	id_order_status int identity
-		constraint order_status_pk
-			primary key nonclustered,
-	description nvarchar(255) not null
 )
 go
 
@@ -233,31 +215,23 @@ create table order_header
 	client_id int not null
 		constraint order_header_client_id_client_fk
 			references client,
-	order_status_id int not null
-		constraint order_header_order_status_id_order_status_fk
-			references order_status,
 	shipping_method_id int not null
 		constraint order_header_shipping_method_id_shipping_method_fk
 			references shipping_method
 )
 go
 
+
 create table order_line
 (
-	id_order_line int identity
-		constraint order_line_pk
-			primary key nonclustered,
-	quantity int not null,
-	order_line_status_id int not null
-		constraint order_line_order_line_status_id_order_line_status_fk
-			references order_line_status,
 	order_header_id int not null
 		constraint order_line_order_header_id_order_header_fk
 			references order_header,
 	product_id int not null
 		constraint order_line_product_id_product_fk
-			references product
+			references product,
+	quantity int not null,
+	constraint order_line_pk
+		primary key nonclustered (order_header_id, product_id)
 )
 go
-
-
