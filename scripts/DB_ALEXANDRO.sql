@@ -201,6 +201,11 @@ create table client
 		constraint client_payment_method_id_payment_method_fk
 			references payment_method
 )
+
+create unique index client_invoice_address_id_uindex
+	on client (invoice_address_id)
+create unique index client_delivery_address_id_uindex
+	on client (delivery_address_id)
 go
 
 create table order_header
