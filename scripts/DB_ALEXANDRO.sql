@@ -207,6 +207,10 @@ create table client
 )
 go
 
+create unique index client_email_uindex
+	on client (email)
+go
+
 create unique index client_invoice_address_id_uindex
 	on client (invoice_address_id)
 go
