@@ -424,7 +424,7 @@ GO
 --
 SET IDENTITY_INSERT dbo.payment_method ON
 GO
-INSERT dbo.payment_method(id, description) VALUES (1, 'Masercard')
+INSERT dbo.payment_method(id, description) VALUES (1, 'Mastercard')
 INSERT dbo.payment_method(id, description) VALUES (2, 'Visa')
 INSERT dbo.payment_method(id, description) VALUES (3, 'Paypal')
 GO
